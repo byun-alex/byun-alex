@@ -1,6 +1,6 @@
-### Hi, I'm Alex Byun 👋
+### Hi, I'm Alex 👋
 
-Final-year Computer Science student (UNSW, Sydney) building **practical AI automation**. I orchestrate Claude, wire up APIs/MCP connectors, and script the boring parts away to turn manual processes into working tools.
+Final-year CS student (UNSW, Sydney) building **practical AI automation**. I orchestrate Claude, wire up APIs/MCP connectors, and script the boring parts away to turn manual processes into working tools.
 
 I learn by shipping: most of what I know about AI tooling comes from building real things, not just courses.
 
