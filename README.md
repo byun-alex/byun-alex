@@ -1,8 +1,8 @@
 ### Hi, I'm Alex 👋
 
-Final-year CS student (UNSW, Sydney) building **practical AI automation**. I orchestrate Claude, wire up APIs/MCP connectors, and script the boring parts away to turn manual processes into working tools.
+Building **practical AI automation**. I orchestrate Claude, wire up APIs/MCP connectors, and script the boring parts away to turn manual processes into working tools.
 
-I learn by shipping: most of what I know about AI tooling comes from building real things, not just courses.
+I learn by shipping: most of what I know about AI tooling comes from building real things, not just courses. I also have a separate private repo for my personal endeavors, which currently tallies up to 10+ different projects. I plan to add them to the public when I have completed them.
 
 #### 🛠️ Projects
 - **[claude-session-continuity](https://github.com/byun-alex/claude-session-continuity)** — persistent cross-session memory for Claude Code. Custom slash-command skills + hooks (`/wrapup`, `/catchup`, `/catchup-all`) that checkpoint a session and reconstruct context next time.
@@ -15,6 +15,6 @@ I learn by shipping: most of what I know about AI tooling comes from building re
 `Python` · `JavaScript / Node.js` · `Bash` · `Claude (skills, hooks, orchestration)` · `MCP / Composio` · `REST APIs` · `FFmpeg` · `Git`
 
 #### 🌱 Currently
-Building AI automations, documenting the journey, and looking for AI / automation internship opportunities in Sydney.
+Building AI automations, documenting the journey.
 
 📫 **kimjay2288@gmail.com**
