@@ -29,17 +29,44 @@ A local web app that sits over all my projects: a chat pane plus an **embedded l
 
 *Node.js · WebSocket · ConPTY · xterm.js · cost observability.*
 
+### 4. job-ad-extractor — a measured LLM extraction system
+**[github.com/byun-alex/job-ad-extractor](https://github.com/byun-alex/job-ad-extractor)**
+
+Turns messy free-text job ads into clean, strict JSON. It's built like a *production* extraction step, not a prompt: **versioned prompts** with a changelog, a **structured-output validation gate** (pydantic) that provably rejects + logs malformed model output, and an **eval harness** — a hand-labelled golden set, field-by-field scoring, a regression check against the last run, and a Markdown report. Provider-agnostic (runs offline with a mock). The point is *measuring* extraction quality, which is what most LLM features skip.
+
+*LLM extraction · prompt versioning · structured-output validation · eval harness · regression testing.*
+
+### 5. morning-brief-agent — an autonomous, spec-driven cloud agent
+**[github.com/byun-alex/morning-brief-agent](https://github.com/byun-alex/morning-brief-agent)**
+
+A scheduled Claude Code cloud agent that every morning reads my calendar, inbox, to-dos, deadlines, and the weather, composes a CEO-style **Morning Brief**, and emails it to me — plus a strategic **Sunday Weekly Wrap**. The twist: the agent's entire behaviour is defined in **Markdown** — the spec files *are* the program, so changing the brief is an edit, not a redeploy. Calendar + inbox are wired through an MCP connector; deadlines come from source-of-truth tracker files, never invented.
+
+*Claude Code cloud routines · cron scheduling · MCP (Calendar + Gmail) · spec-as-config · autonomous agents.*
+
+### 6. planner — an interactive daily-planner MVP
+**[github.com/byun-alex/planner](https://github.com/byun-alex/planner)**
+
+A zero-dependency planner: type a task + a time, it drops onto an hour-by-hour timeline and persists in the browser. One self-contained `index.html`, ~150 lines of vanilla JS, no build or backend. The first finished slice of a larger idea — a *fun* weekly planner where engagement is the differentiator.
+
+*Vanilla JS · localStorage · self-contained · shipped-small-and-finished.*
+
 ---
 
-## 🧠 The system behind it: AI-augmented knowledge bases
+## 🧠 The systems behind the tools: AI-augmented knowledge bases
 
-I don't just use these tools in isolation — I've built a set of **Obsidian vaults, each with its own `CLAUDE.md` behaviour spec, custom skills, and hooks**, so the assistant behaves differently for each purpose. This is where the agentic-workflow muscle actually got built.
+I don't just use these tools in isolation — I've built a set of **Obsidian vaults, each with its own `CLAUDE.md` behaviour spec, custom skills, and hooks**, so the assistant behaves differently for each purpose. This is where the agentic-workflow muscle actually got built. The two most developed are written up as architecture case studies (the vaults themselves stay private):
 
-- **A personal productivity & accountability system** — a vault + a custom daily `/checkin` skill that turns vague intentions into dated, tracked commitments and files the result automatically. Built to fix a real problem (follow-through), and I run it every day.
-- **A structured "learning Claude" vault** — the Anthropic Academy curriculum mapped into concept hubs, a skill tree, and a questions inbox; notes link back to what I've built so theory stays attached to practice.
-- **An idea-development & content-research vault** — where business and content ideas get developed past the one-line stage, with research on automation tooling and channel-launch playbooks.
-- **A study system** — coursework organised in Obsidian with custom Claude skills for note generation and review.
-- **youtube-niche-automation** — a multi-agent content system (ideation → script → manager agents) defined as composable agent prompts.
+### second-brain-system — a personal accountability engine *(case study)*
+**[github.com/byun-alex/second-brain-system](https://github.com/byun-alex/second-brain-system)**
+
+A vault + custom AI behaviour spec + a daily **`/checkin`** slash-command skill that turns vague intentions into dated, tracked commitments and files the result automatically — built to fix a real problem (follow-through), with switchable coaching personas and an override. Architecture only; private journal content excluded.
+
+### study-brain — an LLM-maintained study wiki *(case study)*
+**[github.com/byun-alex/study-brain](https://github.com/byun-alex/study-brain)**
+
+A study system where the human curates sources and the **AI writes and maintains the entire wiki** — turning raw slides/transcripts into beginner-first notes with every question answered and linked to the concept it tests, via a custom multi-step ingest skill and a strict schema. Architecture only; course content excluded.
+
+**Also in the set (not yet written up):** a structured "learning Claude" vault (Anthropic Academy curriculum → concept hubs + skill tree), an idea-development & content-research vault, and **youtube-niche-automation** — a multi-agent content system (ideation → script → manager agents) defined as composable agent prompts.
 
 Common thread: **custom Claude behaviour per context** (CLAUDE.md), **reusable skills** for the repetitive parts, **hooks** for automation, and **a central session diary** so nothing is forgotten between sessions.
 
@@ -49,13 +76,14 @@ Common thread: **custom Claude behaviour per context** (CLAUDE.md), **reusable s
 
 - **Agentic, human-in-the-loop.** Claude orchestrates; I gate the decisions that matter. Approval steps, not blind automation.
 - **Skills + hooks over one-off prompts.** If I do something twice, I turn it into a reusable command.
-- **MCP for tool-wiring.** Connecting AI to real external tools (music gen, etc.) through MCP servers rather than copy-paste.
+- **MCP for tool-wiring.** Connecting AI to real external tools (calendar, email, music gen) through MCP servers rather than copy-paste.
+- **Measure, don't assume.** For anything LLM-shaped, I build the eval/validation layer — proof it works, not just a demo that ran once.
 - **Document as I build.** Every project carries its own context doc so a cold session — or another person — can pick it up.
 - **Ship, then improve.** Time-boxed, finished, public — over endlessly polished and private.
 
 ---
 
 ## 🧰 Tech
-Python · JavaScript / Node.js · Claude / LLM agentic workflows · MCP servers · prompt engineering · automation & tool integration · Git / GitHub · Obsidian · Markdown · FFmpeg · WebSocket / ConPTY.
+Python · JavaScript / Node.js · Claude / LLM agentic workflows · MCP servers (Composio / Zapier) · prompt engineering · structured-output validation & evals · automation & tool integration · Git / GitHub · Obsidian · Markdown · FFmpeg · WebSocket / ConPTY.
 
 **GitHub:** [github.com/byun-alex](https://github.com/byun-alex)
