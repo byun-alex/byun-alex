@@ -22,12 +22,12 @@ Claude orchestrates a chain of tools - music generation (Suno via a **Composio M
 
 *Claude · MCP · FFmpeg · approval-gated automation · human-in-the-loop design.*
 
-### 3. brain-dashboard - a local "Jarvis" operations dashboard
-**[github.com/byun-alex/brain-dashboard](https://github.com/byun-alex/brain-dashboard)**
+### 3. brain-dashboard-v2 - a local "Jarvis" mission-control app
+**[github.com/byun-alex/brain-dashboard-v2](https://github.com/byun-alex/brain-dashboard-v2)**
 
-A local web app that sits over all my projects: a chat pane plus an **embedded live Claude terminal** (WebSocket/ConPTY + xterm.js), project-context switching, and **real-time token-cost tracking** so the cost of every AI action is visible. Node + vanilla JS, no framework.
+A local web app that sits over all my projects: a chat pane plus an **embedded live Claude terminal** (WebSocket/ConPTY + xterm.js), project-context switching, on-the-fly **model switching** (Opus/Sonnet/Haiku), and **real-time token-cost tracking** so the cost of every AI action is visible. Node + vanilla JS, no framework. The hard part was the PTY binding - plain `node-pty` fails on Node 24/Windows; the Homebridge prebuilt fork is what makes a genuine REPL run in the browser.
 
-*Node.js · WebSocket · ConPTY · xterm.js · cost observability.*
+*Node.js · WebSocket · ConPTY · xterm.js · model switching · cost observability.*
 
 ### 4. job-ad-extractor - a measured LLM extraction system
 **[github.com/byun-alex/job-ad-extractor](https://github.com/byun-alex/job-ad-extractor)**
@@ -43,12 +43,12 @@ A scheduled Claude Code cloud agent that every morning reads my calendar, inbox,
 
 *Claude Code cloud routines · cron scheduling · MCP (Calendar + Gmail) · spec-as-config · autonomous agents.*
 
-### 6. planner - an interactive daily-planner MVP
-**[github.com/byun-alex/planner](https://github.com/byun-alex/planner)**
+### 6. interactive-life-planner - a weekly planner that asks "did you do it?"
+**[github.com/byun-alex/interactive-life-planner](https://github.com/byun-alex/interactive-life-planner)**
 
-A zero-dependency planner: type a task + a time, it drops onto an hour-by-hour timeline and persists in the browser. One self-contained `index.html`, ~150 lines of vanilla JS, no build or backend. The first finished slice of a larger idea - a *fun* weekly planner where engagement is the differentiator.
+The realized version of an earlier planner MVP: a weekly time-block grid that closes the loop normal calendars leave open. Once a block's time passes it asks **Done / Skipped**, scores each day's follow-through, logs a one-tap **daily mood** next to it so patterns surface, and adds **streaks + XP** for honest dopamine. An **AI mode** takes a plain-language brain-dump of your week and returns a proposed ideal week (via headless Claude with strict-JSON validation) to review before anything lands. Zero-dependency Node server + vanilla JS.
 
-*Vanilla JS · localStorage · self-contained · shipped-small-and-finished.*
+*Node.js · zero-dependency HTTP server · headless Claude + strict-JSON validation · vanilla JS · engagement design.*
 
 ### 7. telegram-idea-capture - a zero-loss idea inbox
 **[github.com/byun-alex/telegram-idea-capture](https://github.com/byun-alex/telegram-idea-capture)**
@@ -76,17 +76,6 @@ A study system where the human curates sources and the **AI writes and maintains
 **Also in the set (not yet written up):** a structured "learning Claude" vault (Anthropic Academy curriculum → concept hubs + skill tree), an idea-development & content-research vault, and **youtube-niche-automation** - a multi-agent content system (ideation → script → manager agents) defined as composable agent prompts.
 
 Common thread: **custom Claude behaviour per context** (CLAUDE.md), **reusable skills** for the repetitive parts, **hooks** for automation, and **a central session diary** so nothing is forgotten between sessions.
-
----
-
-## 📓 Research & teardowns
-
-### ai-consumer-app-playbook - a teardown of the $10K/mo AI app model
-**[github.com/byun-alex/ai-consumer-app-playbook](https://github.com/byun-alex/ai-consumer-app-playbook)**
-
-Study notes, not a product: I broke down how solo builders are turning **AI-first consumer mobile apps** into $10K/mo - the idea-selection, product ("gotcha feature"), and distribution playbook - then put the tech stacks four independent builders actually ship on **side by side** and synthesized a sensible default (Swift + an AI build loop + Supabase + RevenueCat + PostHog). Sources are attributed; the value-add is the structural synthesis and the stack comparison.
-
-*Market/product teardown · tech-stack comparison · synthesis · attributed research.*
 
 ---
 
