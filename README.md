@@ -11,10 +11,14 @@ I learn by shipping: most of what I know about AI tooling comes from building re
 - **[job-ad-extractor](https://github.com/byun-alex/job-ad-extractor)** - turns messy job ads into clean structured JSON. Versioned prompts + a structured-output validation gate + an eval harness (golden set, field scoring, regression report). A *measured* LLM extraction system.
 - **[morning-brief-agent](https://github.com/byun-alex/morning-brief-agent)** - an autonomous, spec-driven cloud agent that emails me a daily Morning Brief (calendar + inbox + deadlines + weather) and a Sunday Weekly Wrap. The behaviour is defined entirely in Markdown.
 - **[planner](https://github.com/byun-alex/planner)** - a zero-dependency daily-planner MVP: task + time → an hour-by-hour timeline saved in the browser. One self-contained `index.html`.
+- **[telegram-idea-capture](https://github.com/byun-alex/telegram-idea-capture)** - a zero-loss idea inbox: a Cloudflare Worker + KV webhook captures Telegram messages the instant they're sent (even with my PC off), then a local pull + ack drains them into my notes. Webhook-not-polling after a cloud-egress dead end; ~100 lines, no dependencies.
 
 #### 🧠 Systems behind the tools (architecture case studies)
 - **[second-brain-system](https://github.com/byun-alex/second-brain-system)** - a personal accountability engine: an Obsidian vault + custom AI behaviour spec + a daily `/checkin` skill that turns vague intentions into dated, tracked commitments. *(Private content; architecture only.)*
 - **[study-brain](https://github.com/byun-alex/study-brain)** - an LLM-maintained study wiki that turns raw lecture material into review-ready, beginner-first notes with every question linked to the concept it tests. *(Course content excluded; architecture only.)*
+
+#### 📓 Research & teardowns
+- **[ai-consumer-app-playbook](https://github.com/byun-alex/ai-consumer-app-playbook)** - study notes on how solo builders turn AI-first consumer mobile apps into $10K/mo: the idea/product/distribution playbook, a side-by-side of the tech stacks four of them ship on, and a synthesized default stack. Sources attributed.
 
 📂 **[Full portfolio overview →](./PORTFOLIO.md)**
 

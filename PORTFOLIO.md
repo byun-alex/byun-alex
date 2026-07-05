@@ -50,6 +50,13 @@ A zero-dependency planner: type a task + a time, it drops onto an hour-by-hour t
 
 *Vanilla JS · localStorage · self-contained · shipped-small-and-finished.*
 
+### 7. telegram-idea-capture - a zero-loss idea inbox
+**[github.com/byun-alex/telegram-idea-capture](https://github.com/byun-alex/telegram-idea-capture)**
+
+Ideas hit away from my desk and get lost. This captures them: I text a Telegram bot, and a **Cloudflare Worker + KV** webhook stores the message the instant it's sent - with my PC off, asleep, whatever - until a local pull + ack drains the queue into my notes. The design lesson is the interesting part: a scheduled cloud poller failed because the sandbox had **no outbound internet**, which forced the **webhook-not-polling** architecture (Telegram pushes; nothing has to be awake asking). Every endpoint is auth-gated; `update_id` is the KV key so re-deliveries dedupe. ~100 lines, zero dependencies.
+
+*Cloudflare Workers · Cloudflare KV · Telegram Bot API · webhook design · durable buffering.*
+
 ---
 
 ## 🧠 The systems behind the tools: AI-augmented knowledge bases
@@ -69,6 +76,17 @@ A study system where the human curates sources and the **AI writes and maintains
 **Also in the set (not yet written up):** a structured "learning Claude" vault (Anthropic Academy curriculum → concept hubs + skill tree), an idea-development & content-research vault, and **youtube-niche-automation** - a multi-agent content system (ideation → script → manager agents) defined as composable agent prompts.
 
 Common thread: **custom Claude behaviour per context** (CLAUDE.md), **reusable skills** for the repetitive parts, **hooks** for automation, and **a central session diary** so nothing is forgotten between sessions.
+
+---
+
+## 📓 Research & teardowns
+
+### ai-consumer-app-playbook - a teardown of the $10K/mo AI app model
+**[github.com/byun-alex/ai-consumer-app-playbook](https://github.com/byun-alex/ai-consumer-app-playbook)**
+
+Study notes, not a product: I broke down how solo builders are turning **AI-first consumer mobile apps** into $10K/mo - the idea-selection, product ("gotcha feature"), and distribution playbook - then put the tech stacks four independent builders actually ship on **side by side** and synthesized a sensible default (Swift + an AI build loop + Supabase + RevenueCat + PostHog). Sources are attributed; the value-add is the structural synthesis and the stack comparison.
+
+*Market/product teardown · tech-stack comparison · synthesis · attributed research.*
 
 ---
 
